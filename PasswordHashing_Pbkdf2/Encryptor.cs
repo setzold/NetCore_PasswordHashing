@@ -3,6 +3,8 @@ using System.Security.Cryptography; //nuget:  System.Security.Cryptography.X509C
 using Microsoft.AspNetCore.Cryptography.KeyDerivation; //nuget: Microsoft.AspNetCore.Cryptography.KeyDerivation
 using System.Diagnostics;
 using System.Text;
+using System.Security;
+using PasswordHashing_Pbkdf2.Console;
 
 //from: 
 // https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing
@@ -25,6 +27,7 @@ namespace PasswordHashing_Pbkdf2
             Salt = salt;
 
             Debug.WriteLine($"Salt: {Convert.ToBase64String(salt)}");
+
 
             // derive a 256-bit subkey (use HMACSHA512 with 10,000 iterations)
             string hashed = Encoding.UTF8.GetString(KeyDerivation.Pbkdf2(
