@@ -39,7 +39,7 @@ namespace PasswordHashing_Pbkdf2.Tests
             stopwatch.Stop();
         }
 
-        private string CreatePasswordHashForNIteratiosn(string pw, int iterations, Encryptor encrypt, Stopwatch stopwatch)
+        private void CreatePasswordHashForNIteratiosn(string pw, int iterations, Encryptor encrypt, Stopwatch stopwatch)
         {
             stopwatch.Restart();
             var testresult = encrypt.GetPasswordHash(pw, iterations);
@@ -51,7 +51,6 @@ namespace PasswordHashing_Pbkdf2.Tests
             _output.WriteLine($"############################################");
 
             Assert.NotEqual(pw, testresult);
-            return testresult;
         }
     }
 }
