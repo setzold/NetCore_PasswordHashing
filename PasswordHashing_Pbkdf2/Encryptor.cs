@@ -3,8 +3,6 @@ using System.Security.Cryptography; //nuget:  System.Security.Cryptography.X509C
 using Microsoft.AspNetCore.Cryptography.KeyDerivation; //nuget: Microsoft.AspNetCore.Cryptography.KeyDerivation
 using System.Diagnostics;
 using System.Text;
-using System.Security;
-using PasswordHashing_Pbkdf2.Console;
 
 //from: 
 // https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing
@@ -15,7 +13,7 @@ namespace PasswordHashing_Pbkdf2
     public class Encryptor
     {
         //todo: show password in MemoryDump
-        public string GetPasswordHash(string password, int iterationcnt = 10000)
+        public string GetPasswordHash(string password, int iterationcnt = 30000)
         {
             // generate a 128-bit salt using a secure PRNG
             byte[] salt = new byte[128 / 8];

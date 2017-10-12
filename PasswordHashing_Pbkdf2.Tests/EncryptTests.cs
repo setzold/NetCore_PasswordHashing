@@ -31,10 +31,10 @@ namespace PasswordHashing_Pbkdf2.Tests
             CreatePasswordHashForNIteratiosn(pw, 2500, encryptor, stopwatch);
 
             //10000 its
-            CreatePasswordHashForNIteratiosn(pw, 10000, encryptor, stopwatch);
+            CreatePasswordHashForNIteratiosn(pw, 30000, encryptor, stopwatch);
 
             //10000 its - der wzeite durchlauf ist beabsichtigt wegen Salt
-            CreatePasswordHashForNIteratiosn(pw, 10000, encryptor, stopwatch);
+            CreatePasswordHashForNIteratiosn(pw, 30000, encryptor, stopwatch);
 
             stopwatch.Stop();
         }
